@@ -33,6 +33,15 @@ def main():
         return
     screen.fill("black")
     updatable.update(dt)
+    player.position += player.forward
+    if player.position.x > SCREEN_WIDTH:
+      player.position.x = 0
+    elif player.position.x < 0:
+      player.position.x = SCREEN_WIDTH
+    if player.position.y > SCREEN_HEIGHT:
+      player.position.y = 0
+    elif player.position.y < 0:
+      player.position.y = SCREEN_HEIGHT
     for asteroid in asteroids:
       for shot in shots:
         if asteroid.check_collision(shot):
