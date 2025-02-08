@@ -1,5 +1,6 @@
 import pygame
 from circleshape import CircleShape
+from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 
 
 class Shot(CircleShape):
@@ -12,3 +13,11 @@ class Shot(CircleShape):
 
   def update(self, dt):
     self.position += (self.velocity * dt)
+    #if self.position.x > SCREEN_WIDTH:
+      #self.position = 0
+    #elif self.position.x < 0:
+      #self.position = SCREEN_WIDTH
+    #if self.position.y > SCREEN_HEIGHT:
+      #self.position.y = 0
+    #elif self.position.y < 0:
+      #self.position.y = SCREEN_HEIGHT
